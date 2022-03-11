@@ -1,3 +1,5 @@
 basic.forever(function () {
-    basic.showNumber(SJ_Waarnemen.readSoundLevel())
+    if (SJ_Waarnemen.readButtonState(SJ_Waarnemen.ButtonID.B)) {
+        basic.showIcon(IconNames.Heart)
+    }
 })

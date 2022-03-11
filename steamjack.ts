@@ -11,30 +11,73 @@
  * @date  2022-01-03
 */
 
+
+
+
 /**
  * Custom blocks
  */
 //% weight=100 color=#F79226 icon="\f1b8"
 namespace SJ_Waarnemen {
 
+    export enum ButtonID {
+        A = 0,
+        B = 1,
+        //% block="A+B"
+        AB = 2,
+    }
+    
+
     /**
-         * Read temperature sensor.
-         */
+     * Read temperature sensor.
+     */
 
     
     //% blockId=read_Temperature block="Temperatuur"
     export function readTemperature(): number {
-        return input.temperature()
+        return input.temperature();
     }
 
     /**
-         * Read sound level.
-         */
+     * Read sound level.
+     */
 
 
     //% blockId=read_SoundLevel block="Geluidsniveau"
     export function readSoundLevel(): number {
-        return input.soundLevel()
+        return input.soundLevel();
     }
+
+    /**
+     * Read light level.
+     */
+
+
+    //% blockId=read_LightLevel block="Lichtniveau"
+    export function readLightLevel(): number {
+        return input.lightLevel();
+    }
+
+    /**
+     * Read button state.
+     */
+
+
+    //% blockId=read_ButtonState block="Knop |%id| ingedrukt?"
+    export function readButtonState(id:ButtonID): boolean {
+        if (id == 0){
+            return input.buttonIsPressed(Button.A);
+        }
+        else if (id == 1) {
+            return input.buttonIsPressed(Button.B);
+        }
+        else if (id == 2) {
+            return input.buttonIsPressed(Button.AB);
+        }
+        else
+        return false;
+    }
+
+    
 
 }
