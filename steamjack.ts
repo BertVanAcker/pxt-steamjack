@@ -41,8 +41,6 @@ namespace SJ_Waarnemen {
     /**
      * Read sound level.
      */
-
-
     //% blockId=read_SoundLevel block="Geluidsniveau"
     export function readSoundLevel(): number {
         return input.soundLevel();
@@ -51,8 +49,6 @@ namespace SJ_Waarnemen {
     /**
      * Read light level.
      */
-
-
     //% blockId=read_LightLevel block="Lichtniveau"
     export function readLightLevel(): number {
         return input.lightLevel();
@@ -61,8 +57,6 @@ namespace SJ_Waarnemen {
     /**
      * Read button state.
      */
-
-
     //% blockId=read_ButtonState block="Knop |%id| ingedrukt?"
     export function readButtonState(id:ButtonID): boolean {
         if (id == 0){
@@ -78,6 +72,11 @@ namespace SJ_Waarnemen {
         return false;
     }
 
-    
-
+    /**
+     * Read digital pin state.
+     */
+    //% blockId=read_DPinState block="Spanningsniveau digital pin |%id|"
+    export function readDigitalPinState(id: DigitalPin): number {
+        return pins.digitalReadPin(id)
+    }
 }
