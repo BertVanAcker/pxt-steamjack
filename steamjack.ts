@@ -79,4 +79,12 @@ namespace SJ_Waarnemen {
     export function readDigitalPinState(id: DigitalPin): number {
         return pins.digitalReadPin(id)
     }
+
+    /**
+     * Read analog pin state.
+     */
+    //% blockId=read_APinState block="Spanningsniveau analoge pin |%id|"
+    export function readAnalogPinState(id: AnalogPin): number {
+        return pins.analogReadPin(id)
+    }
 }
