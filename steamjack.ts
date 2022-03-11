@@ -27,4 +27,14 @@ namespace SJ_Waarnemen {
         return input.temperature()
     }
 
+    /**
+         * Read sound level.
+         */
+
+
+    //% blockId=read_SoundLevel block="Geluidsniveau"
+    export function readSoundLevel(): number {
+        return input.soundLevel()
+    }
+
 }
